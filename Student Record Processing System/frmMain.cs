@@ -79,5 +79,10 @@ namespace Student_Record_Processing_System
             SelectButton(btn_students, "Students");
             OpenChildForm(new Student());
         }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

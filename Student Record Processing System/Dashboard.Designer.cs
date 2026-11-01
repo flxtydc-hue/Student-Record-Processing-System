@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.foreverLabel2);
             this.panel1.Location = new System.Drawing.Point(16, 19);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 158);
+            this.panel1.Size = new System.Drawing.Size(189, 158);
             this.panel1.TabIndex = 24;
             // 
             // parrotGradientPanel1
@@ -93,18 +93,17 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
-            this.panel2.Location = new System.Drawing.Point(19, 68);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(889, 198);
+            this.panel2.Size = new System.Drawing.Size(920, 199);
             this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel2.TabIndex = 25;
             this.panel2.Text = "panel2";
@@ -116,9 +115,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.parrotGradientPanel4);
             this.panel5.Controls.Add(this.foreverLabel6);
-            this.panel5.Location = new System.Drawing.Point(680, 21);
+            this.panel5.Location = new System.Drawing.Point(708, 21);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(190, 158);
+            this.panel5.Size = new System.Drawing.Size(191, 158);
             this.panel5.TabIndex = 28;
             // 
             // parrotGradientPanel4
@@ -158,9 +157,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.parrotGradientPanel3);
             this.panel4.Controls.Add(this.foreverLabel4);
-            this.panel4.Location = new System.Drawing.Point(459, 21);
+            this.panel4.Location = new System.Drawing.Point(477, 21);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(190, 158);
+            this.panel4.Size = new System.Drawing.Size(192, 158);
             this.panel4.TabIndex = 27;
             // 
             // parrotGradientPanel3
@@ -200,9 +199,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.parrotGradientPanel2);
             this.panel3.Controls.Add(this.foreverLabel3);
-            this.panel3.Location = new System.Drawing.Point(238, 20);
+            this.panel3.Location = new System.Drawing.Point(243, 20);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(190, 158);
+            this.panel3.Size = new System.Drawing.Size(192, 158);
             this.panel3.TabIndex = 26;
             // 
             // parrotGradientPanel2
@@ -238,7 +237,8 @@
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
             this.panel6.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
             this.panel6.Location = new System.Drawing.Point(35, 263);

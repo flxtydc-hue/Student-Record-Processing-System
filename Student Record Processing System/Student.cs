@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Student_Record_Processing_System
 {
@@ -53,17 +54,15 @@ namespace Student_Record_Processing_System
         {
             if (e.RowIndex < 0 || e.ColumnIndex != Actions.Index) return;
 
-            int startX = (Actions.Width - (IconSize * 2 + IconGap)) / 2;   // e.X ay relatibo sa cell
-            string studentId = dgv_students.Rows[e.RowIndex].Cells[student_id.Index].Value.ToString();
+            int startX = (Actions.Width - (IconSize * 2 + IconGap)) / 2;
+            var row = dgv_students.Rows[e.RowIndex];
+            string studentId = row.Cells[student_id.Index].Value.ToString();
+            string name = row.Cells[student_name.Index].Value.ToString();
 
             if (e.X >= startX && e.X <= startX + IconSize)
-            {
                 EditStudent(studentId);
-            }
             else if (e.X >= startX + IconSize + IconGap && e.X <= startX + IconSize * 2 + IconGap)
-            {
-                DeleteStudent(studentId);
-            }
+                DeleteStudent(studentId, name);
         }
 
         private void dgv_students_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
@@ -78,11 +77,11 @@ namespace Student_Record_Processing_System
             dgv_students.Cursor = overIcon ? Cursors.Hand : Cursors.Default;
         }
 
-        private void DeleteStudent(string studentId)
+        private void DeleteStudent(string studentId, string name)
         {
             var confirm = MessageBox.Show(
-               $"Delete student {studentId}?\nThe record will be hidden from the list.",
-               "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+       "Delete " + name + " (" + studentId + ")?\nThe record will be hidden from the list.",
+       "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirm != DialogResult.Yes) return;
 
@@ -92,8 +91,8 @@ namespace Student_Record_Processing_System
                 {
                     conn.Open();
                     string sql = @"UPDATE students
-                                   SET is_deleted = 1, deleted_at = NOW()
-                                   WHERE student_id = @id";
+                           SET is_deleted = 1, deleted_at = NOW()
+                           WHERE student_id = @id";
                     using (var cmd = new MySqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", studentId);
@@ -106,7 +105,7 @@ namespace Student_Record_Processing_System
             {
                 MessageBox.Show("Could not delete the record.\n" + ex.Message);
             }
-            }
+        }
 
         private void Student_Load(object sender, EventArgs e)
         {
@@ -114,10 +113,15 @@ namespace Student_Record_Processing_System
             student_id.DataPropertyName = "student_id";
             student_name.DataPropertyName = "full_name";
             program.DataPropertyName = "program_code";
-            year.DataPropertyName = "year_level";
+            year.DataPropertyName = "year_text";
             section.DataPropertyName = "section";
             Actions.DataPropertyName = "";
-            
+
+            dgv_students.CellDoubleClick += (s, ev) =>
+            {
+                if (ev.RowIndex < 0 || ev.ColumnIndex == Actions.Index) return;
+                EditStudent(dgv_students.Rows[ev.RowIndex].Cells[student_id.Index].Value.ToString());
+            };
             comboBoxEdit1.SelectedIndex = 0;                     // Year: All
             button1.Click += (s, ev) => FilterProgram("");      // All
             btn_bscs.Click += (s, ev) => FilterProgram("BSCS");
@@ -125,14 +129,9 @@ namespace Student_Record_Processing_System
             comboBoxEdit1.SelectedIndexChanged += (s, ev) => LoadStudents();
             txt_search.TextChanged += (s, ev) => LoadStudents();
             dgv_students.CellMouseLeave += (s, ev) => dgv_students.Cursor = Cursors.Default;
-            button2.Click += (s, ev) => AddStudent();
+            btn_add.Click += (s, ev) => AddStudent();
 
             LoadStudents();
-        }
-
-        private void AddStudent()
-        {
-            MessageBox.Show("Add student dialog goes here.");
         }
 
         private void FilterProgram(string code)
@@ -150,19 +149,27 @@ namespace Student_Record_Processing_System
                     conn.Open();
 
                     string sql = @"SELECT s.student_id,
-                                          CONCAT(s.last_name, ', ', s.first_name) AS full_name,
-                                          p.program_code,
-                                          s.year_level,
-                                          s.section
-                                   FROM students s
-                                   JOIN programs p ON p.program_id = s.program_id
-                                   WHERE s.is_deleted = 0
-                                     AND (@prog = '' OR p.program_code = @prog)
-                                     AND (@yr = 0 OR s.year_level = @yr)
-                                     AND (s.student_id LIKE @q
-                                          OR s.last_name LIKE @q
-                                          OR s.first_name LIKE @q)
-                                   ORDER BY s.last_name, s.first_name";
+                                  CONCAT(s.last_name, ', ', s.first_name,
+                                         IF(IFNULL(s.middle_name, '') = '', '',
+                                            CONCAT(' ', LEFT(s.middle_name, 1), '.')),
+                                         IF(IFNULL(s.suffix, '') = '', '',
+                                            CONCAT(' ', s.suffix))) AS full_name,
+                                  p.program_code,
+                                  CONCAT(s.year_level,
+                                         CASE s.year_level WHEN 1 THEN 'st'
+                                                           WHEN 2 THEN 'nd'
+                                                           WHEN 3 THEN 'rd'
+                                                           ELSE 'th' END) AS year_text,
+                                  s.section
+                           FROM students s
+                           JOIN programs p ON p.program_id = s.program_id
+                           WHERE s.is_deleted = 0
+                             AND (@prog = '' OR p.program_code = @prog)
+                             AND (@yr = 0 OR s.year_level = @yr)
+                             AND (s.student_id LIKE @q
+                                  OR s.last_name LIKE @q
+                                  OR s.first_name LIKE @q)
+                           ORDER BY s.last_name, s.first_name";
 
                     using (var cmd = new MySqlCommand(sql, conn))
                     {
@@ -185,16 +192,38 @@ namespace Student_Record_Processing_System
             }
         }
 
-        // Pansamantala. Papalitan ng dlgStudent kapag nagawa na ito.
-        private void EditStudent(string studentId)
+        private void AddStudent()
         {
-            MessageBox.Show("Edit student " + studentId);
+            using (var dlg = new Register())
+            {
+                if (dlg.ShowDialog(this) == DialogResult.OK)
+                    LoadStudents();
+            }
         }
 
+
+        private void EditStudent(string studentId)
+        {
+            using (var dlg = new Register(studentId))
+            {
+                if (dlg.ShowDialog(this) == DialogResult.OK)
+                    LoadStudents();
+            }
+        }
         // Para bumalik sa normal ang cursor kapag umalis ang mouse sa cell
         private void dgv_students_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             dgv_students.Cursor = Cursors.Default;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_students_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }
