@@ -226,6 +226,7 @@
             this.btn_attendance.Text = "Attendance";
             this.btn_attendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_attendance.UseVisualStyleBackColor = true;
+            this.btn_attendance.Click += new System.EventHandler(this.btn_attendance_Click);
             // 
             // btn_grades
             // 
@@ -241,6 +242,7 @@
             this.btn_grades.Text = "Grades";
             this.btn_grades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_grades.UseVisualStyleBackColor = true;
+            this.btn_grades.Click += new System.EventHandler(this.btn_grades_Click);
             // 
             // btn_students
             // 

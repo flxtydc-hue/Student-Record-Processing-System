@@ -36,8 +36,8 @@
             this.btn_academic = new ReaLTaiizor.Controls.Button();
             this.panel_button = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_cancel = new ReaLTaiizor.Controls.Button();
             this.btn_save = new ReaLTaiizor.Controls.Button();
+            this.btn_cancel = new ReaLTaiizor.Controls.Button();
             this.txt_studentno = new ReaLTaiizor.Controls.DungeonTextBox();
             this.lbl_lname = new ReaLTaiizor.Controls.ForeverLabel();
             this.lbl_fname = new ReaLTaiizor.Controls.ForeverLabel();
@@ -53,19 +53,20 @@
             this.rb_female = new ReaLTaiizor.Controls.HopeRadioButton();
             this.dtp_birthdate = new System.Windows.Forms.DateTimePicker();
             this.panel_contact = new System.Windows.Forms.Panel();
-            this.txt_contactno = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.lbl_address = new ReaLTaiizor.Controls.ForeverLabel();
-            this.lbl_email = new ReaLTaiizor.Controls.ForeverLabel();
-            this.txt_address = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.txt_email = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.lbl_guardian = new ReaLTaiizor.Controls.ForeverLabel();
-            this.txt_guardian = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.lbl_gcontact = new ReaLTaiizor.Controls.ForeverLabel();
+            this.lbl_contact = new ReaLTaiizor.Controls.ForeverLabel();
             this.txt_gcontact = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.lbl_gcontact = new ReaLTaiizor.Controls.ForeverLabel();
+            this.txt_guardian = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.lbl_guardian = new ReaLTaiizor.Controls.ForeverLabel();
+            this.txt_email = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.txt_address = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.lbl_email = new ReaLTaiizor.Controls.ForeverLabel();
+            this.lbl_address = new ReaLTaiizor.Controls.ForeverLabel();
+            this.txt_contactno = new ReaLTaiizor.Controls.DungeonTextBox();
             this.panel_info = new System.Windows.Forms.Panel();
             this.lbl_studentno = new ReaLTaiizor.Controls.ForeverLabel();
-            this.lbl_contact = new ReaLTaiizor.Controls.ForeverLabel();
             this.panel_academic = new System.Windows.Forms.Panel();
+            this.lbl_program = new ReaLTaiizor.Controls.ForeverLabel();
             this.dtp_enroll = new System.Windows.Forms.DateTimePicker();
             this.cmb_section = new ReaLTaiizor.Controls.ComboBoxEdit();
             this.cmb_year = new ReaLTaiizor.Controls.ComboBoxEdit();
@@ -77,7 +78,6 @@
             this.lbl_section = new ReaLTaiizor.Controls.ForeverLabel();
             this.lbl_status = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel2 = new ReaLTaiizor.Controls.ForeverLabel();
-            this.lbl_program = new ReaLTaiizor.Controls.ForeverLabel();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel_contact.SuspendLayout();
@@ -201,26 +201,6 @@
             this.panel4.TabIndex = 34;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // btn_cancel
-            // 
-            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cancel.BorderColor = System.Drawing.Color.Gray;
-            this.btn_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancel.EnteredBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_cancel.EnteredColor = System.Drawing.Color.Maroon;
-            this.btn_cancel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.Image = null;
-            this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cancel.InactiveColor = System.Drawing.Color.Transparent;
-            this.btn_cancel.Location = new System.Drawing.Point(382, 10);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_cancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_cancel.Size = new System.Drawing.Size(70, 33);
-            this.btn_cancel.TabIndex = 35;
-            this.btn_cancel.Text = "Cancel";
-            this.btn_cancel.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
             // btn_save
             // 
             this.btn_save.BackColor = System.Drawing.Color.Transparent;
@@ -241,6 +221,26 @@
             this.btn_save.Text = "Save";
             this.btn_save.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.BorderColor = System.Drawing.Color.Gray;
+            this.btn_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancel.EnteredBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.btn_cancel.EnteredColor = System.Drawing.Color.Maroon;
+            this.btn_cancel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.Image = null;
+            this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_cancel.InactiveColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.Location = new System.Drawing.Point(382, 10);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.btn_cancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.btn_cancel.Size = new System.Drawing.Size(70, 33);
+            this.btn_cancel.TabIndex = 35;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // txt_studentno
             // 
@@ -487,101 +487,50 @@
             this.panel_contact.Size = new System.Drawing.Size(549, 373);
             this.panel_contact.TabIndex = 49;
             // 
-            // txt_contactno
+            // lbl_contact
             // 
-            this.txt_contactno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbl_contact.AutoSize = true;
+            this.lbl_contact.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_contact.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_contact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_contact.Location = new System.Drawing.Point(16, 15);
+            this.lbl_contact.Name = "lbl_contact";
+            this.lbl_contact.Size = new System.Drawing.Size(101, 26);
+            this.lbl_contact.TabIndex = 43;
+            this.lbl_contact.Text = "Contact No.";
+            this.lbl_contact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txt_gcontact
+            // 
+            this.txt_gcontact.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_contactno.BackColor = System.Drawing.Color.Transparent;
-            this.txt_contactno.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_contactno.EdgeColor = System.Drawing.Color.Maroon;
-            this.txt_contactno.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_contactno.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_contactno.Location = new System.Drawing.Point(17, 42);
-            this.txt_contactno.MaxLength = 32767;
-            this.txt_contactno.Multiline = false;
-            this.txt_contactno.Name = "txt_contactno";
-            this.txt_contactno.ReadOnly = false;
-            this.txt_contactno.Size = new System.Drawing.Size(234, 34);
-            this.txt_contactno.TabIndex = 28;
-            this.txt_contactno.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_contactno.UseSystemPasswordChar = false;
+            this.txt_gcontact.BackColor = System.Drawing.Color.Transparent;
+            this.txt_gcontact.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_gcontact.EdgeColor = System.Drawing.Color.Maroon;
+            this.txt_gcontact.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_gcontact.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_gcontact.Location = new System.Drawing.Point(287, 193);
+            this.txt_gcontact.MaxLength = 32767;
+            this.txt_gcontact.Multiline = false;
+            this.txt_gcontact.Name = "txt_gcontact";
+            this.txt_gcontact.ReadOnly = false;
+            this.txt_gcontact.Size = new System.Drawing.Size(240, 34);
+            this.txt_gcontact.TabIndex = 42;
+            this.txt_gcontact.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_gcontact.UseSystemPasswordChar = false;
             // 
-            // lbl_address
+            // lbl_gcontact
             // 
-            this.lbl_address.AutoSize = true;
-            this.lbl_address.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_address.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_address.Location = new System.Drawing.Point(12, 89);
-            this.lbl_address.Name = "lbl_address";
-            this.lbl_address.Size = new System.Drawing.Size(73, 26);
-            this.lbl_address.TabIndex = 35;
-            this.lbl_address.Text = "Address";
-            this.lbl_address.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl_email
-            // 
-            this.lbl_email.AutoSize = true;
-            this.lbl_email.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_email.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_email.Location = new System.Drawing.Point(282, 13);
-            this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(53, 26);
-            this.lbl_email.TabIndex = 36;
-            this.lbl_email.Text = "Email";
-            this.lbl_email.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txt_address
-            // 
-            this.txt_address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_address.BackColor = System.Drawing.Color.Transparent;
-            this.txt_address.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_address.EdgeColor = System.Drawing.Color.Maroon;
-            this.txt_address.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_address.Location = new System.Drawing.Point(17, 118);
-            this.txt_address.MaxLength = 32767;
-            this.txt_address.Multiline = false;
-            this.txt_address.Name = "txt_address";
-            this.txt_address.ReadOnly = false;
-            this.txt_address.Size = new System.Drawing.Size(510, 34);
-            this.txt_address.TabIndex = 37;
-            this.txt_address.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_address.UseSystemPasswordChar = false;
-            // 
-            // txt_email
-            // 
-            this.txt_email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_email.BackColor = System.Drawing.Color.Transparent;
-            this.txt_email.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_email.EdgeColor = System.Drawing.Color.Maroon;
-            this.txt_email.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_email.Location = new System.Drawing.Point(287, 42);
-            this.txt_email.MaxLength = 32767;
-            this.txt_email.Multiline = false;
-            this.txt_email.Name = "txt_email";
-            this.txt_email.ReadOnly = false;
-            this.txt_email.Size = new System.Drawing.Size(240, 34);
-            this.txt_email.TabIndex = 38;
-            this.txt_email.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_email.UseSystemPasswordChar = false;
-            // 
-            // lbl_guardian
-            // 
-            this.lbl_guardian.AutoSize = true;
-            this.lbl_guardian.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_guardian.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_guardian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_guardian.Location = new System.Drawing.Point(16, 164);
-            this.lbl_guardian.Name = "lbl_guardian";
-            this.lbl_guardian.Size = new System.Drawing.Size(137, 26);
-            this.lbl_guardian.TabIndex = 39;
-            this.lbl_guardian.Text = "Guardian Name ";
-            this.lbl_guardian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_gcontact.AutoSize = true;
+            this.lbl_gcontact.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_gcontact.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_gcontact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_gcontact.Location = new System.Drawing.Point(282, 164);
+            this.lbl_gcontact.Name = "lbl_gcontact";
+            this.lbl_gcontact.Size = new System.Drawing.Size(187, 26);
+            this.lbl_gcontact.TabIndex = 41;
+            this.lbl_gcontact.Text = "Guardian\'s Contact No.";
+            this.lbl_gcontact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txt_guardian
             // 
@@ -602,37 +551,101 @@
             this.txt_guardian.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_guardian.UseSystemPasswordChar = false;
             // 
-            // lbl_gcontact
+            // lbl_guardian
             // 
-            this.lbl_gcontact.AutoSize = true;
-            this.lbl_gcontact.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_gcontact.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_gcontact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_gcontact.Location = new System.Drawing.Point(282, 164);
-            this.lbl_gcontact.Name = "lbl_gcontact";
-            this.lbl_gcontact.Size = new System.Drawing.Size(187, 26);
-            this.lbl_gcontact.TabIndex = 41;
-            this.lbl_gcontact.Text = "Guardian\'s Contact No.";
-            this.lbl_gcontact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_guardian.AutoSize = true;
+            this.lbl_guardian.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_guardian.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_guardian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_guardian.Location = new System.Drawing.Point(16, 164);
+            this.lbl_guardian.Name = "lbl_guardian";
+            this.lbl_guardian.Size = new System.Drawing.Size(137, 26);
+            this.lbl_guardian.TabIndex = 39;
+            this.lbl_guardian.Text = "Guardian Name ";
+            this.lbl_guardian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txt_gcontact
+            // txt_email
             // 
-            this.txt_gcontact.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_gcontact.BackColor = System.Drawing.Color.Transparent;
-            this.txt_gcontact.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_gcontact.EdgeColor = System.Drawing.Color.Maroon;
-            this.txt_gcontact.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_gcontact.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_gcontact.Location = new System.Drawing.Point(287, 193);
-            this.txt_gcontact.MaxLength = 32767;
-            this.txt_gcontact.Multiline = false;
-            this.txt_gcontact.Name = "txt_gcontact";
-            this.txt_gcontact.ReadOnly = false;
-            this.txt_gcontact.Size = new System.Drawing.Size(240, 34);
-            this.txt_gcontact.TabIndex = 42;
-            this.txt_gcontact.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_gcontact.UseSystemPasswordChar = false;
+            this.txt_email.BackColor = System.Drawing.Color.Transparent;
+            this.txt_email.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_email.EdgeColor = System.Drawing.Color.Maroon;
+            this.txt_email.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_email.Location = new System.Drawing.Point(287, 42);
+            this.txt_email.MaxLength = 32767;
+            this.txt_email.Multiline = false;
+            this.txt_email.Name = "txt_email";
+            this.txt_email.ReadOnly = false;
+            this.txt_email.Size = new System.Drawing.Size(240, 34);
+            this.txt_email.TabIndex = 38;
+            this.txt_email.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_email.UseSystemPasswordChar = false;
+            // 
+            // txt_address
+            // 
+            this.txt_address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_address.BackColor = System.Drawing.Color.Transparent;
+            this.txt_address.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_address.EdgeColor = System.Drawing.Color.Maroon;
+            this.txt_address.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_address.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_address.Location = new System.Drawing.Point(17, 118);
+            this.txt_address.MaxLength = 32767;
+            this.txt_address.Multiline = false;
+            this.txt_address.Name = "txt_address";
+            this.txt_address.ReadOnly = false;
+            this.txt_address.Size = new System.Drawing.Size(510, 34);
+            this.txt_address.TabIndex = 37;
+            this.txt_address.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_address.UseSystemPasswordChar = false;
+            // 
+            // lbl_email
+            // 
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_email.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_email.Location = new System.Drawing.Point(282, 13);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(53, 26);
+            this.lbl_email.TabIndex = 36;
+            this.lbl_email.Text = "Email";
+            this.lbl_email.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_address
+            // 
+            this.lbl_address.AutoSize = true;
+            this.lbl_address.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_address.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_address.Location = new System.Drawing.Point(12, 89);
+            this.lbl_address.Name = "lbl_address";
+            this.lbl_address.Size = new System.Drawing.Size(73, 26);
+            this.lbl_address.TabIndex = 35;
+            this.lbl_address.Text = "Address";
+            this.lbl_address.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txt_contactno
+            // 
+            this.txt_contactno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_contactno.BackColor = System.Drawing.Color.Transparent;
+            this.txt_contactno.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_contactno.EdgeColor = System.Drawing.Color.Maroon;
+            this.txt_contactno.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_contactno.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_contactno.Location = new System.Drawing.Point(17, 42);
+            this.txt_contactno.MaxLength = 32767;
+            this.txt_contactno.Multiline = false;
+            this.txt_contactno.Name = "txt_contactno";
+            this.txt_contactno.ReadOnly = false;
+            this.txt_contactno.Size = new System.Drawing.Size(234, 34);
+            this.txt_contactno.TabIndex = 28;
+            this.txt_contactno.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_contactno.UseSystemPasswordChar = false;
             // 
             // panel_info
             // 
@@ -672,19 +685,6 @@
             this.lbl_studentno.Text = "Student No.";
             this.lbl_studentno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbl_contact
-            // 
-            this.lbl_contact.AutoSize = true;
-            this.lbl_contact.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_contact.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_contact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_contact.Location = new System.Drawing.Point(16, 15);
-            this.lbl_contact.Name = "lbl_contact";
-            this.lbl_contact.Size = new System.Drawing.Size(101, 26);
-            this.lbl_contact.TabIndex = 43;
-            this.lbl_contact.Text = "Contact No.";
-            this.lbl_contact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panel_academic
             // 
             this.panel_academic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -706,6 +706,19 @@
             this.panel_academic.Name = "panel_academic";
             this.panel_academic.Size = new System.Drawing.Size(549, 332);
             this.panel_academic.TabIndex = 52;
+            // 
+            // lbl_program
+            // 
+            this.lbl_program.AutoSize = true;
+            this.lbl_program.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_program.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_program.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_program.Location = new System.Drawing.Point(16, 21);
+            this.lbl_program.Name = "lbl_program";
+            this.lbl_program.Size = new System.Drawing.Size(16, 26);
+            this.lbl_program.TabIndex = 46;
+            this.lbl_program.Text = " ";
+            this.lbl_program.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtp_enroll
             // 
@@ -906,19 +919,6 @@
             this.foreverLabel2.TabIndex = 35;
             this.foreverLabel2.Text = "Year Level";
             this.foreverLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl_program
-            // 
-            this.lbl_program.AutoSize = true;
-            this.lbl_program.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_program.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_program.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_program.Location = new System.Drawing.Point(16, 21);
-            this.lbl_program.Name = "lbl_program";
-            this.lbl_program.Size = new System.Drawing.Size(16, 26);
-            this.lbl_program.TabIndex = 46;
-            this.lbl_program.Text = " ";
-            this.lbl_program.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Register
             // 

@@ -22,6 +22,8 @@ namespace Student_Record_Processing_System
         public Student()
         {
             InitializeComponent();
+
+            btn_import.ForeColor = Color.Black;
         }
 
         private void btn_all_Click(object sender, EventArgs e)
@@ -224,6 +226,16 @@ namespace Student_Record_Processing_System
         private void dgv_students_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
            
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

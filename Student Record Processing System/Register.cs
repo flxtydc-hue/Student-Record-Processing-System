@@ -129,6 +129,9 @@ namespace Student_Record_Processing_System
             // Ang Year at Section ay sumusunod sa Program
             rb_act.CheckedChanged += (s, ev) => RefreshYears();
             rb_bscs.CheckedChanged += (s, ev) => RefreshYears();
+            rb_irregular.CheckedChanged += (s, ev) => UpdateSectionLabel();
+            rb_regular.CheckedChanged += (s, ev) => UpdateSectionLabel();
+            UpdateSectionLabel();
             cmb_year.SelectedIndexChanged += (s, ev) => RefreshSections();
             RefreshYears();
 
@@ -269,6 +272,11 @@ namespace Student_Record_Processing_System
             {
                 MessageBox.Show("Could not load the record.\n" + ex.Message);
             }
+        }
+
+        private void UpdateSectionLabel()
+        {
+            lbl_section.Text = rb_irregular.Checked ? "Section (mother section)" : "Section";
         }
 
         // ---------- VALIDATION ----------

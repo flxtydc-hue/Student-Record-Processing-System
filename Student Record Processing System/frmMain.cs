@@ -84,5 +84,17 @@ namespace Student_Record_Processing_System
         {
 
         }
+
+        private void btn_grades_Click(object sender, EventArgs e)
+        {
+            SelectButton(btn_grades, "Grade Computation");
+            OpenChildForm(new Grades());
+        }
+
+        private void btn_attendance_Click(object sender, EventArgs e)
+        {
+            SelectButton(btn_attendance, "Attendance");
+            OpenChildForm(new Attendance());
+        }
     }
 }
